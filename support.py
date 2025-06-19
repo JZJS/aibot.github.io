@@ -3,6 +3,7 @@ Centralized support chains configuration for Nodit Bot.
 All supported chains are defined here with standardized naming convention:
 <INTERFACE_NAME>_SUPPORTED_CHAINS
 """
+from config import NODIT_API_KEY
 
 # Balance query supported chains
 BALANCE_SUPPORTED_CHAINS = [
@@ -36,6 +37,16 @@ ALERT_SUPPORTED_CHAINS = [
     "optimism",
     "kaia"
 ]
+
+# Map each chain to its mainnet Nodit endpoint, NODIT_API_KEY appended as query param
+ALERT_WEBHOOK_ENDPOINTS = {
+    "ethereum": f"https://ethereum-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",
+    "polygon":  f"https://polygon-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",
+    "arbitrum": f"https://arbitrum-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",
+    "base":     f"https://base-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",
+    "optimism": f"https://optimism-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",
+    "kaia":     f"https://kaia-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}"
+}
 
 # Transaction history supported chains (Coming Soon)
 TXS_SUPPORTED_CHAINS = [
