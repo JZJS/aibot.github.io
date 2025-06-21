@@ -38,17 +38,15 @@ Whether you’re a trader, developer, or new to crypto, NoditAIBot is your all-i
 All command formats are available via `/help` in the bot.
 The main supported features:
 
-### `/help`
-
-Show all features and how to use them, with quick buttons for each command.
-![image](https://github.com/user-attachments/assets/544b61cd-64fb-4396-8976-5afd772191a9)
-
-
 ### `/start`
 
 Sends a **quick-start video guide** and shows easy copy-paste commands for beginners.
 ![image](https://github.com/user-attachments/assets/4b841acd-3ecb-484b-9297-93406213f215)
 
+### `/help`
+
+Show all features and how to use them, with quick buttons for each command.
+![image](https://github.com/user-attachments/assets/544b61cd-64fb-4396-8976-5afd772191a9)
 
 
 ### `/balance`
