@@ -2,7 +2,7 @@
 
 # NoditAIBot
 
-[![YouTube 1st Wave](https://img.shields.io/badge/YouTube-1st_Wave-red)](https://youtu.be/dUOsBQrbwUc)
+[![YouTube 1st Wave](https://img.shields.io/badge/YouTube-1st_Wave-red)](https://youtu.be/V4XEvYiv0p8)
 [![YouTube 2nd Wave](https://img.shields.io/badge/YouTube-2nd_Wave-red)](https://youtu.be/zqO7iRJ_oEs)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot-blue)](https://t.me/test_ttest_bbot_bot)
 [![Contact on X](https://img.shields.io/badge/X-Contact-informational)](https://x.com/BTCtensai)
