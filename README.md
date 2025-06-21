@@ -41,12 +41,14 @@ The main supported features:
 ### `/help`
 
 Show all features and how to use them, with quick buttons for each command.
-![image](https://github.com/user-attachments/assets/11c28fa6-b200-42de-b041-78e01ddf6a73)
+![image](https://github.com/user-attachments/assets/544b61cd-64fb-4396-8976-5afd772191a9)
+
 
 ### `/start`
 
 Sends a **quick-start video guide** and shows easy copy-paste commands for beginners.
-![image](https://github.com/user-attachments/assets/21c4309a-7c58-4b3c-b210-5bc243ccdaaf)
+![image](https://github.com/user-attachments/assets/4b841acd-3ecb-484b-9297-93406213f215)
+
 
 
 ### `/balance`
