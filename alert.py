@@ -33,7 +33,7 @@ class AlertManager:
         except Exception as e:
             print(f"Error saving alerts: {e}")
 
-    async def create_webhook(self, chain: str, address: str, description: str) -> Optional[str]:
+    async def create_webhook(self, chain: str, address: str, description: str, chat_id: str) -> Optional[str]:
         """Create a webhook for transaction monitoring"""
         if chain not in ALERT_SUPPORTED_CHAINS:
             return None
@@ -51,7 +51,7 @@ class AlertManager:
             "eventType": "SUCCESSFUL_TRANSACTION",
             "description": f"{description} - Transaction Alert",
             "notification": {
-                "webhookUrl": "https://nodit-webhook.yuxialun123.workers.dev/"
+                "webhookUrl": f"https://nodit-webhook.yuxialun123.workers.dev/?chat_id={chat_id}"
             },
             "condition": {
                 "addresses": [
@@ -111,7 +111,8 @@ class AlertManager:
                 
         # Create webhook for monitoring
         description = f"Alert for {address} on {chain}"
-        webhook_id = await self.create_webhook(chain, address, description)
+        chat_id = str(update.effective_chat.id)
+        webhook_id = await self.create_webhook(chain, address, description, chat_id)
         
         if not webhook_id:
             await update.message.reply_text(f"Failed to create alert for {address} on {chain.capitalize()}")
@@ -129,6 +130,7 @@ class AlertManager:
             f"Alert added successfully!\n"
             f"Chain: {chain.capitalize()}\n"
             f"Address: {address}\n"
+            f"Subscription ID: {webhook_id}\n"
             f"You will be notified of any transactions for this address."
         )
         return True
@@ -318,9 +320,47 @@ class AlertManager:
 # Global alert manager instance
 alert_manager = AlertManager()
 
+user_queues = {}
+user_tasks = {}
+
 async def handle_alert_command(update, context):
-    """Handle /alert command"""
-    
+    """Handle /alert command with per-user queue and action-specific waiting message"""
+    user_id = update.effective_user.id
+    action = context.args[0].lower() if context.args else ""
+    # 根据 action 回复不同的等待提示
+    if action == "add":
+        wait_msg = "Adding alert, please wait..."
+    elif action == "del":
+        if len(context.args) >= 2 and context.args[1].lower() == "all":
+            wait_msg = "Deleting all alerts, please wait..."
+        elif len(context.args) == 2:
+            wait_msg = "Deleting alert by subscription ID, please wait..."
+        elif len(context.args) >= 3:
+            wait_msg = "Removing alert, please wait..."
+        else:
+            wait_msg = "Deleting alert, please wait..."
+    elif action == "list":
+        wait_msg = "Listing your alerts, please wait..."
+    else:
+        wait_msg = "Processing your request, please wait..."
+    await update.message.reply_text(wait_msg)
+    # 入队
+    if user_id not in user_queues:
+        user_queues[user_id] = asyncio.Queue()
+    await user_queues[user_id].put((update, context))
+    if user_id not in user_tasks or user_tasks[user_id].done():
+        user_tasks[user_id] = asyncio.create_task(process_user_queue(user_id))
+
+async def process_user_queue(user_id):
+    while not user_queues[user_id].empty():
+        update, context = await user_queues[user_id].get()
+        try:
+            await handle_alert_command_inner(update, context)
+        except Exception as e:
+            await update.message.reply_text(f"Error: {e}")
+
+async def handle_alert_command_inner(update, context):
+    """原有 handle_alert_command 逻辑，去掉等待提示部分"""
     if not context.args:
         await update.message.reply_text(
             "Invalid command format. Please use:\n"
@@ -349,28 +389,23 @@ async def handle_alert_command(update, context):
                 "/alert del all - Remove all your alerts"
             )
             return
-            
         if context.args[1].lower() == "all":
             await alert_manager.delete_all_user_alerts(user_id, update)
             return
-            
         if len(context.args) == 2:
             # Delete by subscription ID
             subscription_id = context.args[1]
             await alert_manager.delete_alert_by_subscription_id(user_id, subscription_id, update)
             return
-            
         if len(context.args) >= 3:
             # Delete by chain and address
             chain = context.args[1].lower()
             address = context.args[2]
-            
             if chain not in ALERT_SUPPORTED_CHAINS:
                 await update.message.reply_text(
                     f"Unsupported chain. Supported chains: {', '.join(ALERT_SUPPORTED_CHAINS)}"
                 )
                 return
-                
             await alert_manager.remove_alert(user_id, chain, address, update)
             return
 
@@ -381,16 +416,13 @@ async def handle_alert_command(update, context):
                 f"Supported chains: {', '.join(ALERT_SUPPORTED_CHAINS)}"
             )
             return
-
         chain = context.args[1].lower()
         address = context.args[2]
-
         if chain not in ALERT_SUPPORTED_CHAINS:
             await update.message.reply_text(
                 f"Unsupported chain. Supported chains: {', '.join(ALERT_SUPPORTED_CHAINS)}"
             )
             return
-
         await alert_manager.add_alert(user_id, chain, address, update)
         return
 
