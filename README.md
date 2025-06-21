@@ -118,8 +118,3 @@ Pull requests, issues, and feature suggestions are always welcome!
 
 ---
 
-**Bot ID:**
-Telegram Bot: [@test\_ttest\_bbot\_bot](https://t.me/test_ttest_bbot_bot) *(subject to change in the official release)*
-
----
-
