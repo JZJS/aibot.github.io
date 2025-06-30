@@ -4,6 +4,7 @@
 
 [![YouTube 1st Wave](https://img.shields.io/badge/YouTube-1st_Wave-red)](https://youtu.be/V4XEvYiv0p8)
 [![YouTube 2nd Wave](https://img.shields.io/badge/YouTube-2nd_Wave-red)](https://youtu.be/zqO7iRJ_oEs)
+[![YouTube 3rd Wave](https://img.shields.io/badge/YouTube-3rd_Wave-red)](https://youtu.be/EjowAu2FakM)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot-blue)](https://t.me/test_ttest_bbot_bot)
 [![Contact on X](https://img.shields.io/badge/X-Contact-informational)](https://x.com/BTCtensai)
 
@@ -12,46 +13,47 @@
 ## Introduction
 
 **NoditAIBot** is a next-generation Telegram AI bot for the Web3 world.
-It integrates AI-powered chat, real-time blockchain data queries, and a powerful alert subscription system—making on-chain life easier than ever.
+It combines AI-powered chat, real-time blockchain data queries, and an advanced alert subscription system—making on-chain life easier than ever.
 
 * Get live wallet/token data from multiple chains
 * Subscribe to on-chain transaction alerts
-* Manage all features easily with a clean menu and in-chat buttons
-* Watch quick video guides for an instant start
+* Manage everything with a clean menu and handy in-chat buttons
+* Watch short video guides to get started instantly
 
-Whether you’re a trader, developer, or new to crypto, NoditAIBot is your all-in-one assistant for on-chain monitoring and interaction.
+Whether you’re a trader, developer, or just getting started with crypto, NoditAIBot is your all-in-one assistant for on-chain monitoring and interaction.
 
 ---
 
 ## Major Updates
 
-* All bot features are now **separated into dedicated interfaces** for balance, tokens, alert, help, and AI MCP chat
-* **Every command format** is documented and available in the `/help` menu, with quick buttons for one-click reference
-* `/start` sends a video guide (`assets/NoditAIBot.mp4`) and a quick command copy panel
-* `/help` provides a detailed button-based menu for all bot functions
-* Alerts now support full add/delete/list management, including per-address and per-subscriptionId operations
+**3rd Wave: AI-Powered MCP & Smarter Chat!**
+[Watch the new demo here (YouTube)](https://youtu.be/EjowAu2FakM)
+
+* 🚀 **New /mcp AI chat:** Now powered by GPT and Dify AI, NoditAIBot understands code and docs! All our bot’s source code and Nodit’s official website are imported into the knowledge base via Jina AI. The bot can answer any on-chain, technical, or usage question using real project knowledge.
+* 👋 **/mcp command:** Type `/mcp` to start a chat with the bot, then ask anything (e.g., `/mcp How do I add an alert?`). Replies come from both code and documentation.
+* 🎬 **/start update:** Shows a new promo video and a handy quick-start guide.
+* 🆘 **/help update:** Now with a clickable button menu for every bot function—try `/tokens` and other features with one tap.
+* 🛠️ **All main features (balance, tokens, alert, help, AI chat)** are now separated for easier management and extension.
+* 🔔 **Alerts system**: Full add/delete/list management, including per-address and per-subscriptionId.
 
 ---
 
 ## All Commands & Usage
 
-All command formats are available via `/help` in the bot.
-The main supported features:
+All commands and formats are also shown in `/help` in the bot.
+Key features:
 
 ### `/start`
 
 Sends a **quick-start video guide** and shows easy copy-paste commands for beginners.
-![image](https://github.com/user-attachments/assets/4b841acd-3ecb-484b-9297-93406213f215)
 
 ### `/help`
 
-Show all features and how to use them, with quick buttons for each command.
-![image](https://github.com/user-attachments/assets/544b61cd-64fb-4396-8976-5afd772191a9)
-
+Displays all features and how to use them, now with quick buttons for each command.
 
 ### `/balance`
 
-Query native token balance for a given address.
+Query native token balance for any address.
 
 ```
 /balance <chain> <address>
@@ -60,7 +62,7 @@ Example: /balance ethereum 0x1234...
 
 ### `/tokens`
 
-Query top contract token balances for a given address.
+Query your top contract token balances (sorted by balance).
 
 ```
 /tokens <chain> <address>
@@ -69,8 +71,7 @@ Example: /tokens polygon 0x1234...
 
 ### `/alert`
 
-Create/manage/delete transaction alerts for any address.
-Full usage:
+Create/manage/delete on-chain transaction alerts.
 
 ```
 /alert add <chain> <address>       - Add a new alert
@@ -80,32 +81,31 @@ Full usage:
 /alert del all                     - Delete all your alerts
 ```
 
+### `/mcp` (AI chat, **new in 3rd wave**)
 
-
-### `/mcp` (AI chat, in development)
-
-Start an AI conversation for on-chain and wallet questions.
+Start a conversation with the AI assistant for on-chain and wallet questions.
 
 ```
 /mcp
 /mcp <your question>
 ```
 
+Ask anything about usage, blockchain, tokens, or Nodit features—the bot will answer from its full code and web docs knowledge.
+
 ---
 
 ## Video Tutorials
 
-* **1st Wave Demo:** [https://youtu.be/dUOsBQrbwUc](https://youtu.be/dUOsBQrbwUc)
+* **1st Wave Demo:** [https://youtu.be/V4XEvYiv0p8](https://youtu.be/V4XEvYiv0p8)
 * **2nd Wave Demo:** [https://youtu.be/zqO7iRJ\_oEs](https://youtu.be/zqO7iRJ_oEs)
+* **3rd Wave Demo:** [https://youtu.be/EjowAu2FakM](https://youtu.be/EjowAu2FakM)
 
 ---
 
 ## Quick Links
 
-* **Telegram Bot:**
-  [@test\_ttest\_bbot\_bot](https://t.me/test_ttest_bbot_bot) *(subject to change in official release)*
-* **Contact on X:**
-  [BTCtensai](https://x.com/BTCtensai)
+* **Telegram Bot:** [@test\_ttest\_bbot\_bot](https://t.me/test_ttest_bbot_bot) *(subject to change in official release)*
+* **Contact on X:** [BTCtensai](https://x.com/BTCtensai)
 
 ---
 
@@ -115,4 +115,3 @@ Try NoditAIBot, share feedback, and follow our journey on social media.
 Pull requests, issues, and feature suggestions are always welcome!
 
 ---
-
