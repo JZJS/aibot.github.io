@@ -93,6 +93,7 @@ Start a conversation with the AI assistant for on-chain and wallet questions.
 ```
 
 Ask anything about usage, blockchain, tokens, or Nodit features—the bot will answer from its full code and web docs knowledge.
+
 ![image](https://github.com/user-attachments/assets/1237004c-0119-41ba-b158-f1aaedb9323a)
 
 ---
