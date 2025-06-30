@@ -46,10 +46,12 @@ Key features:
 ### `/start`
 
 Sends a **quick-start video guide** and shows easy copy-paste commands for beginners.
+![image](https://github.com/user-attachments/assets/56b34264-12a9-4bd2-ae94-9f25aa768872)
 
 ### `/help`
 
 Displays all features and how to use them, now with quick buttons for each command.
+![image](https://github.com/user-attachments/assets/369473ae-cffe-4440-9fb5-67f5d4dec314)
 
 ### `/balance`
 
@@ -91,6 +93,7 @@ Start a conversation with the AI assistant for on-chain and wallet questions.
 ```
 
 Ask anything about usage, blockchain, tokens, or Nodit features—the bot will answer from its full code and web docs knowledge.
+![image](https://github.com/user-attachments/assets/1237004c-0119-41ba-b158-f1aaedb9323a)
 
 ---
 
