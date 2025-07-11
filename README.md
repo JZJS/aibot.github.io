@@ -97,6 +97,17 @@ Ask anything about usage, blockchain, tokens, or Nodit features—the bot will a
 ![image](https://github.com/user-attachments/assets/1237004c-0119-41ba-b158-f1aaedb9323a)
 
 ---
+### `/daily` (Daily stats query, **new in 3rd wave**)
+
+Query daily active accounts and transactions stats for the past ten days.
+
+```
+/daily <chain> [contract_address]
+Example: /daily ethereum 0x1234...
+```
+Use this to get on-chain daily usage stats for a specific contract (like USDT) and total transactions.
+
+---
 
 ## Video Tutorials
 
