@@ -38,6 +38,11 @@ ALERT_SUPPORTED_CHAINS = [
     "kaia"
 ]
 
+# Daily stats supported chains
+DAILY_SUPPORTED_CHAINS = [
+    "ethereum"
+]
+
 # Map each chain to its mainnet Nodit endpoint, NODIT_API_KEY appended as query param
 ALERT_WEBHOOK_ENDPOINTS = {
     "ethereum": f"https://ethereum-mainnet.nodit.io/?X-API-KEY={NODIT_API_KEY}",

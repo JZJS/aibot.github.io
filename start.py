@@ -20,8 +20,9 @@ async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "`/tokens base YOUR_WALLET_ADDRESS`\n"
         "`/alert add ethereum YOUR_WALLET_ADDRESS`\n"
         "`/alert list`\n"
-        "`/help`\n\n"
-        "🧠 `/mcp` - AI Assistant (coming soon)"
+        "`/daily ethereum CONTRACT_ADDRESS`\n"
+        "`/help`\n"
+        "`/mcp What is NoditAIBot?`"
     )
     await update.message.reply_text(command_text, parse_mode='Markdown')
 

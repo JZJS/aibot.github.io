@@ -3,7 +3,8 @@ from telegram.ext import ContextTypes, CallbackQueryHandler
 from support import (
     BALANCE_SUPPORTED_CHAINS,
     TOKEN_SUPPORTED_CHAINS,
-    ALERT_SUPPORTED_CHAINS
+    ALERT_SUPPORTED_CHAINS,
+    DAILY_SUPPORTED_CHAINS
 )
 
 HELP_DETAILS = {
@@ -23,17 +24,23 @@ HELP_DETAILS = {
         "title": "Alert Command",
         "desc": "Create and manage transaction alerts for addresses.",
         "usage": (
-            "/alert add [chain] [address] - Add an alert\n"
+            "/alert add [<chain>] [<address>] - Add an alert\n"
             "/alert list - List all alerts\n"
-            "/alert del [chain] [address] - Delete alert by chain and address\n"
-            "/alert del [subscription_id] - Delete alert by subscription ID\n"
+            "/alert del [<chain>] [<address>] - Delete alert by chain and address\n"
+            "/alert del [<subscription_id>] - Delete alert by subscription ID\n"
             "/alert del all - Delete all alerts"
         ),
         "chains": ALERT_SUPPORTED_CHAINS
     },
+    "daily": {
+        "title": "Daily Command",
+        "desc": "Query ten days ago to today's active accounts and transactions stats for a contract.",
+        "usage": "/daily <chain> [contract_address]\nExample: /daily ethereum 0x1234...",
+        "chains": DAILY_SUPPORTED_CHAINS
+    },
 
     "mcp": {
-        "title": "MCP Command (AI Chat) (Coming Soon)",
+        "title": "MCP Command (AI Chat) ",
         "desc": "Start an AI conversation for blockchain and wallet questions.",
         "usage": (
             "/mcp - Start a conversation\n"
@@ -57,6 +64,7 @@ async def handle_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("🪙 balance", callback_data="help_balance")],
             [InlineKeyboardButton("📊 tokens", callback_data="help_tokens")],
             [InlineKeyboardButton("🔔 alert", callback_data="help_alert")],
+            [InlineKeyboardButton("📅 daily", callback_data="help_daily")],
             [InlineKeyboardButton("🤖 mcp", callback_data="help_mcp")],
         ]
         await update.message.reply_text(
@@ -70,7 +78,7 @@ async def handle_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     cmd = context.args[0].lower()
     if cmd not in HELP_DETAILS:
         await update.message.reply_text(
-            f"Unknown command: {cmd}. Supported: balance, tokens, alert, mcp."
+            f"Unknown command: {cmd}. Supported: balance, tokens, alert, daily, mcp."
         )
         return
     msg = get_command_help(cmd)

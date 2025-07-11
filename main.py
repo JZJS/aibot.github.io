@@ -34,6 +34,7 @@ from support import (
     ADDRESS_FORMAT_DESCRIPTIONS
 )
 from start import handle_start
+from daily import query_daily_stats
 
 import logging
 logging.basicConfig(level=logging.ERROR)
@@ -163,6 +164,7 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("alert", handle_alert_command))
     app.add_handler(CommandHandler("mcp", handle_mcp))
     app.add_handler(CommandHandler("help", handle_help))
+    app.add_handler(CommandHandler("daily", query_daily_stats))
     app.add_handler(CallbackQueryHandler(help_callback_handler, pattern="^help_"))
     
     # Handle unknown commands last
@@ -175,6 +177,7 @@ if __name__ == "__main__":
     print("- /alert")
     print("- /mcp")
     print("- /help")
+    print("- /daily")
     
     # Start the bot
     app.run_polling()
