@@ -106,6 +106,7 @@ Query daily active accounts and transactions stats for the past ten days.
 Example: /daily ethereum 0x1234...
 ```
 Use this to get on-chain daily usage stats for a specific contract (like USDT) and total transactions.
+
 <img width="654" height="577" alt="image" src="https://github.com/user-attachments/assets/ee62f593-6d91-4f63-8bf2-3e4d8e8a4e64" />
 
 
