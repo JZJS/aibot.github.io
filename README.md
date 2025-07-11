@@ -31,10 +31,9 @@ Whether you’re a trader, developer, or just getting started with crypto, Nodit
 
 * 🚀 **New /mcp AI chat:** Now powered by GPT and Dify AI, NoditAIBot understands code and docs! All our bot’s source code and Nodit’s official website are imported into the knowledge base via Jina AI. The bot can answer any on-chain, technical, or usage question using real project knowledge.
 * 👋 **/mcp command:** Type `/mcp` to start a chat with the bot, then ask anything (e.g., `/mcp How do I add an alert?`). Replies come from both code and documentation.
+* 📅 **/daily command:** Query daily active accounts and transactions stats for the past ten days.
 * 🎬 **/start update:** Shows a new promo video and a handy quick-start guide.
 * 🆘 **/help update:** Now with a clickable button menu for every bot function—try `/tokens` and other features with one tap.
-* 🛠️ **All main features (balance, tokens, alert, help, AI chat)** are now separated for easier management and extension.
-* 🔔 **Alerts system**: Full add/delete/list management, including per-address and per-subscriptionId.
 
 ---
 
