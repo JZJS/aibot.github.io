@@ -46,12 +46,13 @@ Key features:
 ### `/start`
 
 Sends a **quick-start video guide** and shows easy copy-paste commands for beginners.
-![image](https://github.com/user-attachments/assets/56b34264-12a9-4bd2-ae94-9f25aa768872)
+<img width="476" height="210" alt="image" src="https://github.com/user-attachments/assets/b0e7f281-6d60-4007-837f-e0849a96493e" />
 
 ### `/help`
 
 Displays all features and how to use them, now with quick buttons for each command.
-![image](https://github.com/user-attachments/assets/369473ae-cffe-4440-9fb5-67f5d4dec314)
+<img width="495" height="280" alt="image" src="https://github.com/user-attachments/assets/7edae160-25d2-4ec2-9cdd-fde5bf7803d0" />
+
 
 ### `/balance`
 
