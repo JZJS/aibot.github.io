@@ -54,7 +54,8 @@ Sends a **quick-start video guide** and shows easy copy-paste commands for begin
 ### `/help`
 
 Displays all features and how to use them, now with quick buttons for each command.
-<img width="495" height="280" alt="image" src="https://github.com/user-attachments/assets/7edae160-25d2-4ec2-9cdd-fde5bf7803d0" />
+<img width="495" height="361" alt="image" src="https://github.com/user-attachments/assets/9a6eb176-07fb-4ee3-9981-f30baab57848" />
+
 
 
 ### `/balance`
@@ -110,7 +111,6 @@ Example: /daily ethereum 0x1234...
 ```
 Use this to get on-chain daily usage stats for a specific contract (like USDT) and total transactions.
 
-<img width="654" height="577" alt="image" src="https://github.com/user-attachments/assets/ee62f593-6d91-4f63-8bf2-3e4d8e8a4e64" />
 
 
 ### `/nft`
