@@ -132,7 +132,7 @@ Example: /gas optimism
 
 /gas min
 → Shows the chain with lowest average gas right now
----
+```
 
 
 
