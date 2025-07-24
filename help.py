@@ -4,7 +4,9 @@ from support import (
     BALANCE_SUPPORTED_CHAINS,
     TOKEN_SUPPORTED_CHAINS,
     ALERT_SUPPORTED_CHAINS,
-    DAILY_SUPPORTED_CHAINS
+    DAILY_SUPPORTED_CHAINS,
+    NFT_SUPPORTED_CHAINS,
+    GAS_SUPPORTED_CHAINS
 )
 
 HELP_DETAILS = {
@@ -38,6 +40,18 @@ HELP_DETAILS = {
         "usage": "/daily <chain> [contract_address]\nExample: /daily ethereum 0x1234...",
         "chains": DAILY_SUPPORTED_CHAINS
     },
+    "nft": {
+        "title": "NFT Command",
+        "desc": "Query top 5 NFTs for a given address on a supported chain.",
+        "usage": "/nft <chain> <address>\nExample: /nft ethereum 0x1234...",
+        "chains": NFT_SUPPORTED_CHAINS
+    },
+    "gas": {
+        "title": "Gas Command",
+        "desc": "Query gas price for a given chain, or use 'min' to find the chain with the lowest gas price.",
+        "usage": "/gas <chain>\n/gas min\nExample: /gas optimism or /gas min",
+        "chains": GAS_SUPPORTED_CHAINS
+    },
 
     "mcp": {
         "title": "MCP Command (AI Chat) ",
@@ -63,8 +77,10 @@ async def handle_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("🪙 balance", callback_data="help_balance")],
             [InlineKeyboardButton("📊 tokens", callback_data="help_tokens")],
+            [InlineKeyboardButton("🖼️ nft", callback_data="help_nft")],
             [InlineKeyboardButton("🔔 alert", callback_data="help_alert")],
             [InlineKeyboardButton("📅 daily", callback_data="help_daily")],
+            [InlineKeyboardButton("⛽ gas", callback_data="help_gas")],
             [InlineKeyboardButton("🤖 mcp", callback_data="help_mcp")],
         ]
         await update.message.reply_text(
@@ -78,7 +94,7 @@ async def handle_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     cmd = context.args[0].lower()
     if cmd not in HELP_DETAILS:
         await update.message.reply_text(
-            f"Unknown command: {cmd}. Supported: balance, tokens, alert, daily, mcp."
+            f"Unknown command: {cmd}. Supported: balance, tokens, nft, alert, daily, gas, mcp."
         )
         return
     msg = get_command_help(cmd)

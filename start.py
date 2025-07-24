@@ -18,6 +18,8 @@ async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "⚡ Try these commands right now by copying and pasting them:\n\n"
         "`/balance polygon YOUR_WALLET_ADDRESS`\n"
         "`/tokens base YOUR_WALLET_ADDRESS`\n"
+        "`/nft ethereum YOUR_WALLET_ADDRESS`\n"
+        "`/gas min`\n"
         "`/alert add ethereum YOUR_WALLET_ADDRESS`\n"
         "`/alert list`\n"
         "`/daily ethereum CONTRACT_ADDRESS`\n"

@@ -35,6 +35,8 @@ from support import (
 )
 from start import handle_start
 from daily import query_daily_stats
+from nft import handle_nft
+from gas import handle_gas
 
 import logging
 logging.basicConfig(level=logging.ERROR)
@@ -165,6 +167,8 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("mcp", handle_mcp))
     app.add_handler(CommandHandler("help", handle_help))
     app.add_handler(CommandHandler("daily", query_daily_stats))
+    app.add_handler(CommandHandler("nft", handle_nft))
+    app.add_handler(CommandHandler("gas", handle_gas))
     app.add_handler(CallbackQueryHandler(help_callback_handler, pattern="^help_"))
     
     # Handle unknown commands last
@@ -178,6 +182,8 @@ if __name__ == "__main__":
     print("- /mcp")
     print("- /help")
     print("- /daily")
+    print("- /nft")
+    print("- /gas")
     
     # Start the bot
     app.run_polling()

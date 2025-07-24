@@ -38,9 +38,28 @@ ALERT_SUPPORTED_CHAINS = [
     "kaia"
 ]
 
+# NFT query supported chains
+NFT_SUPPORTED_CHAINS = [
+    "ethereum",
+    "polygon",
+    "arbitrum",
+    "base",
+    "optimism",
+    "kaia"
+]
+
 # Daily stats supported chains
 DAILY_SUPPORTED_CHAINS = [
     "ethereum"
+]
+
+# Gas price supported chains
+GAS_SUPPORTED_CHAINS = [
+    "ethereum",
+    "polygon",
+    "arbitrum",
+    "base",
+    "optimism"
 ]
 
 # Map each chain to its mainnet Nodit endpoint, NODIT_API_KEY appended as query param
