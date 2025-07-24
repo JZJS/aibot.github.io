@@ -5,8 +5,10 @@
 [![YouTube 1st Wave](https://img.shields.io/badge/YouTube-1st_Wave-red)](https://youtu.be/V4XEvYiv0p8)
 [![YouTube 2nd Wave](https://img.shields.io/badge/YouTube-2nd_Wave-red)](https://youtu.be/zqO7iRJ_oEs)
 [![YouTube 3rd Wave](https://img.shields.io/badge/YouTube-3rd_Wave-red)](https://youtu.be/EjowAu2FakM)
+[![YouTube MCP Demo](https://img.shields.io/badge/YouTube-MCP_Demo-green)](https://youtu.be/Fj4NvrJSnEU)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot-blue)](https://t.me/test_ttest_bbot_bot)
 [![Contact on X](https://img.shields.io/badge/X-Contact-informational)](https://x.com/BTCtensai)
+
 
 ---
 
@@ -15,25 +17,27 @@
 **NoditAIBot** is a next-generation Telegram AI bot for the Web3 world.
 It combines AI-powered chat, real-time blockchain data queries, and an advanced alert subscription system—making on-chain life easier than ever.
 
-* Get live wallet/token data from multiple chains
-* Subscribe to on-chain transaction alerts
-* Manage everything with a clean menu and handy in-chat buttons
+* Get live wallet/token/NFT/gas data from multiple chains
+* Query blockchain insights through an intelligent AI layer (via Dify)
+* Use buttons or natural language in Telegram chat
 * Watch short video guides to get started instantly
 
 Whether you’re a trader, developer, or just getting started with crypto, NoditAIBot is your all-in-one assistant for on-chain monitoring and interaction.
 
 ---
 
-## Major Updates
+## 🔄 Latest Wave Update
 
-**3rd Wave: AI-Powered MCP & Smarter Chat!**
-[Watch the new demo here (YouTube)](https://youtu.be/EjowAu2FakM)
+**Final Wave: Full MCP + Multi-Chain Intelligence**  
+🎥 [Watch the update demo here](https://youtu.be/Fj4NvrJSnEU)
 
-* 🚀 **New /mcp AI chat:** Now powered by GPT and Dify AI, NoditAIBot understands code and docs! All our bot’s source code and Nodit’s official website are imported into the knowledge base via Jina AI. The bot can answer any on-chain, technical, or usage question using real project knowledge.
-* 👋 **/mcp command:** Type `/mcp` to start a chat with the bot, then ask anything (e.g., `/mcp How do I add an alert?`). Replies come from both code and documentation.
-* 📅 **/daily command:** Query daily active accounts and transactions stats for the past ten days.
-* 🎬 **/start update:** Shows a new promo video and a handy quick-start guide.
-* 🆘 **/help update:** Now with a clickable button menu for every bot function—try `/tokens` and other features with one tap.
+🧠 We’ve upgraded the AI layer with Dify AI + Function Calling support. The new `/mcp` command enables the bot to understand your natural questions and fetch answers directly from the blockchain.
+
+### Now, our Nodit agent can:
+- ✅ Retrieve knowledge from the **Nodit website**
+- ✅ Access the full **NoditAIBot codebase** (via embedded docs)
+- ✅ **Query blockchain data via MCP**, automatically calling the right API
+- ✅ Recommend bot commands automatically if your question matches one
 
 ---
 
@@ -83,21 +87,20 @@ Create/manage/delete on-chain transaction alerts.
 /alert del all                     - Delete all your alerts
 ```
 
-### `/mcp` (AI chat, **new in 3rd wave**)
+### `/mcp` (**AI chat**, MCP-driven)
 
-Start a conversation with the AI assistant for on-chain and wallet questions.
+Start a conversation with the bot, and it will:
+- Check if your question matches known bot functions (like `/balance`)
+- Help you form the correct command, or
+- Use MCP tools to retrieve data from-chain via `list → get → call`
 
 ```
 /mcp
 /mcp <your question>
 ```
 
-Ask anything about usage, blockchain, tokens, or Nodit features—the bot will answer from its full code and web docs knowledge.
 
-![image](https://github.com/user-attachments/assets/1237004c-0119-41ba-b158-f1aaedb9323a)
-
-
-### `/daily` (Daily stats query, **new in 3rd wave**)
+### `/daily`
 
 Query daily active accounts and transactions stats for the past ten days.
 
@@ -110,13 +113,28 @@ Use this to get on-chain daily usage stats for a specific contract (like USDT) a
 <img width="654" height="577" alt="image" src="https://github.com/user-attachments/assets/ee62f593-6d91-4f63-8bf2-3e4d8e8a4e64" />
 
 
+### `/nft`
+
+Query the top 5 NFTs owned by an address.
+
+```
+/nft <chain> <address>
+Example: /nft ethereum 0xabc...
+```
+
+### `/gas`
+
+Get gas prices for any supported chain, or use `min` to find the cheapest chain:
+
+```
+/gas <chain>
+Example: /gas optimism
+
+/gas min
+→ Shows the chain with lowest average gas right now
 ---
 
-## Video Tutorials
 
-* **1st Wave Demo:** [https://youtu.be/V4XEvYiv0p8](https://youtu.be/V4XEvYiv0p8)
-* **2nd Wave Demo:** [https://youtu.be/zqO7iRJ\_oEs](https://youtu.be/zqO7iRJ_oEs)
-* **3rd Wave Demo:** [https://youtu.be/EjowAu2FakM](https://youtu.be/EjowAu2FakM)
 
 ---
 
